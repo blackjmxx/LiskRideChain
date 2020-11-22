@@ -1,19 +1,14 @@
 const { Application, genesisBlockDevnet, configDevnet } = require('lisk-sdk');
-//const RegisterPacketTransaction = require('../transactions/register-packet');
-//const StartTransportTransaction = require('../transactions/start-transport');
-//const FinishTransportTransaction = require('../transactions/finish-transport');
-const RegisterCarTransaction = require('../transactions/register-car');
-const RegisterTravelTransaction = require('../transactions/register-travel');
-const BookTravelTransaction = require('../transactions/book-travel');
-const StartTravelransaction = require('../transactions/start-travel');
-const EndTravelTransaction = require('../transactions/end-travel');
+const RegisterCarTransaction = require('./transactions/register-car');
+const RegisterTravelTransaction = require('./transactions/register-travel');
+const BookTravelTransaction = require('./transactions/book-travel');
+const StartTravelransaction = require('./transactions/start-travel');
+const EndTravelTransaction = require('./transactions/end-travel');
 
 const { ExtendedHTTPApiModule } = require('@moosty/lisk-extended-api');
 
 
 configDevnet.app.label = 'lisk-ride';
-configDevnet.modules.http_api.access.public = true;
-// configDevnet.components.storage.host = 'db';
 const app = new Application(genesisBlockDevnet, configDevnet);
 
 app.registerTransaction(RegisterCarTransaction);
